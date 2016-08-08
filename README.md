@@ -13,13 +13,13 @@ npm install bas-meteor-jwplayer
 
 Load globally:
 
-```
+```js
 Bas_JWPlayer.load('YOUR_KEY_HERE');
 ```
 
 Or only on specific routes:
 
-```
+```js
 // Iron Router
 Router.onBeforeAction(function() {
   Bas_JWPlayer.load('YOUR_KEY_HERE');
@@ -27,7 +27,7 @@ Router.onBeforeAction(function() {
 }, { only: ['route1', 'route2'] });
 ```
 
-```
+```js
 // Flow Router
 FlowRouter.triggers.enter([Bas_JWPlayer.load('YOUR_KEY_HERE')], {
   only: ['route1', 'route2']
@@ -38,7 +38,7 @@ FlowRouter.triggers.enter([Bas_JWPlayer.load('YOUR_KEY_HERE')], {
 
 Template HTML
 
-```
+```html
 <template name="myTemplate">
   <div id="player"></div>
 </template>
@@ -46,7 +46,7 @@ Template HTML
 
 Template JS
 
-```
+```js
 // use Bas_JWPlayer.loaded() to reactively check that the lib is ready
 Template.myTemplate.onRendered(function() {
   this.autorun(function() {
