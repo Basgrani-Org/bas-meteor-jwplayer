@@ -1,0 +1,23 @@
+{
+  "name": "bas-meteor-jwplayer",
+  "version": "1.0.0",
+  "description": "Integrate a CDN hosted version of JWPlayer using your own license.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://Basgrani@github.com/Basgrani-Org/bas-meteor-jwplayer.git"
+  },
+  "keywords": [
+    "meteor",
+    "jwplayer"
+  ],
+  "author": "Jorge Gonzalez",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Basgrani-Org/bas-meteor-jwplayer/issues"
+  },
+  "homepage": "https://github.com/Basgrani-Org/bas-meteor-jwplayer#readme"
+}
