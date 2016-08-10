@@ -21,7 +21,6 @@
   },
   "homepage": "https://github.com/Basgrani-Org/bas-meteor-jwplayer#readme",
   "dependencies": {
-    "exit": "0.1.2",
-    "glob": "~ 3.2.1"
+    "bas-meteor-utils": "*"
   }
 }

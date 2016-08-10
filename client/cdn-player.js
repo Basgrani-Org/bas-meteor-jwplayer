@@ -1,5 +1,4 @@
 // Set start point
-if(!BasMTR){BasMTR = {};}
 var _start_point = BasMTR;
 
 // JWPlayer

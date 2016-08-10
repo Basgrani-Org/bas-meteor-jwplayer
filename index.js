@@ -1,4 +1,4 @@
-if(typeof BasMTR === "undefined"){BasMTR = {};}
+BasMTR = require('bas-meteor-utils').BasMTR;
 exports.BasMTR = BasMTR;
 
 require('./lib');
