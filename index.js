@@ -1,8 +1,15 @@
-import 'lib';
+if(typeof BasMTR === "undefined"){BasMTR = {};}
+exports.BasMTR = BasMTR;
 
-// Startup
-Meteor.startup(function () {
-    if(Meteor.isServer ){ import 'server'; }
-    if(Meteor.isClient){ import 'client'; }
-});
+require('./lib');
 
+// Is Server
+if(Meteor.isServer){
+    require('./server');
+}
+
+// Is Client
+if(Meteor.isClient){
+    require('./client');
+    exports.JWPlayer = BasMTR.JWPlayer;
+}

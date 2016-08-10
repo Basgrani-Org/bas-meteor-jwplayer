@@ -1,2 +1,1 @@
-
-import 'cdn-player.js';
+require('./cdn-player.js');
