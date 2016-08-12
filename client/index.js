@@ -1,1 +1,1 @@
-require('./cdn-player.js');
+require('./main.js');

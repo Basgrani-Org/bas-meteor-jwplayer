@@ -1,5 +1,10 @@
 ## CHANGELOG
 
+### v1.0.5 (Aug 12, 2016)
+
+**Fixes**
+- Redeclare lib
+
 ### v1.0.4 (Aug 10, 2016)
 
 **Updates**
