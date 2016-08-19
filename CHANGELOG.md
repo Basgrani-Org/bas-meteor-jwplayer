@@ -1,5 +1,10 @@
 ## CHANGELOG
 
+### v1.0.6 (Aug 19, 2016)
+
+**Fixes**
+- Minor
+
 ### v1.0.5 (Aug 12, 2016)
 
 **Fixes**

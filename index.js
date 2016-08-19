@@ -3,18 +3,18 @@ BasMTR = require('bas-meteor-utils').BasMTR;
 /* jshint +W020 */
 exports.BasMTR = BasMTR;
 
-if(BasMTR.jwplayer_isInit){return;}
+var _is_init = BasMTR.jwplayer_isInit;
 
-require('./lib');
+if(!_is_init){ require('./lib'); }
 
 // Is Server
 if(Meteor.isServer){
-    require('./server');
+    if(!_is_init){ require('./server'); }
 }
 
 // Is Client
 if(Meteor.isClient){
-    require('./client');
+    if(!_is_init){ require('./client'); }
     exports.JWPlayer = BasMTR.JWPlayer;
 }
 
