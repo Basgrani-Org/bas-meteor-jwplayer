@@ -1,10 +1,8 @@
-// Set start point
-var _start_point = BasMTR;
-
 // JWPlayer
 (function (mtr) {
-    _start_point.JWPlayer = {};
-    var _this = function(){return _start_point.JWPlayer;}();
+    // Set start point
+    if(!BasMTR.JWPlayer){ BasMTR.JWPlayer = {}; }
+    var _this = function(){return BasMTR.JWPlayer;}();
 
     _this._loaded = new ReactiveVar(false);
 
@@ -43,15 +41,17 @@ var _start_point = BasMTR;
         return this._loaded.get();
     };
 
-    // Meteor Init
-    _this.mtr_init = function() {
+    // Init only one once
+    _this.init = function() {
         //...
     };
 
     // Meteor startup
     mtr.startup(function () {
-        // Init
-        _this.mtr_init();
+        // ...
     });
+
+    // Init
+    if(!_this.is_init){_this.init();_this.is_init = true;}
 
 }( Meteor ));
