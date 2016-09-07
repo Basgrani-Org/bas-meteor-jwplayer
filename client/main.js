@@ -1,28 +1,34 @@
+var _ = require('underscore');
+
 // JWPlayer
 (function (mtr) {
     // Set start point
-    if(!BasMTR.JWPlayer){ BasMTR.JWPlayer = {}; }
-    var _this = function(){return BasMTR.JWPlayer;}();
+    if (!BasMTR.JWPlayer) {
+        BasMTR.JWPlayer = {};
+    }
+    var _this = function () {
+        return BasMTR.JWPlayer;
+    }();
 
     _this._loaded = new ReactiveVar(false);
 
-    _this.load = _.once(function(token) {
+    _this.load = _.once(function (token) {
         if (!token) {
             console.warn('Please add your token to JWPlayer.load()');
-            return
+            return;
         }
-        var script = document.createElement('script');
+        var script  = document.createElement('script');
         script.type = 'text/javascript';
-        script.src = '//content.jwplatform.com/libraries/' + token + '.js';
+        script.src  = '//content.jwplatform.com/libraries/' + token + '.js';
         document.head.appendChild(script);
 
         this._checkReady();
     });
 
-    _this._checkReady = function() {
-        var self = this;
-        var i = 0;
-        var checkReady = mtr.setInterval(function(){
+    _this._checkReady = function () {
+        var self       = this;
+        var i          = 0;
+        var checkReady = mtr.setInterval(function () {
             if (typeof jwplayer !== 'undefined') {
                 self._loaded.set(true);
                 mtr.clearInterval(checkReady);
@@ -37,12 +43,12 @@
         }, 100);
     };
 
-    _this.loaded = function() {
+    _this.loaded = function () {
         return this._loaded.get();
     };
 
     // Init only one once
-    _this.init = function() {
+    _this.init = function () {
         //...
     };
 
@@ -52,6 +58,9 @@
     });
 
     // Init
-    if(!_this.is_init){_this.init();_this.is_init = true;}
+    if (!_this.is_init) {
+        _this.init();
+        _this.is_init = true;
+    }
 
-}( Meteor ));
+}(Meteor));

@@ -1,5 +1,10 @@
 ## CHANGELOG
 
+### v1.0.8 (Sept 07, 2016)
+
+**Updates**
+- Code style
+
 ### v1.0.7 (Aug 22, 2016)
 
 **Fixes**
