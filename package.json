@@ -1,26 +1,27 @@
 {
-  "name": "bas-meteor-jwplayer",
-  "version": "1.0.8",
-  "description": "Integrate a CDN hosted version of JWPlayer using your own license.",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://Basgrani@github.com/Basgrani-Org/bas-meteor-jwplayer.git"
-  },
-  "keywords": [
-    "meteor",
-    "jwplayer"
-  ],
-  "author": "Jorge Gonzalez",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/Basgrani-Org/bas-meteor-jwplayer/issues"
-  },
-  "homepage": "https://github.com/Basgrani-Org/bas-meteor-jwplayer#readme",
-  "dependencies": {
-    "bas-meteor-utils": "*"
-  }
+    "name"        : "bas-meteor-jwplayer",
+    "version"     : "1.0.8",
+    "description" : "Integrate a CDN hosted version of JWPlayer using your own license.",
+    "main"        : "dist/index.js",
+    "scripts"     : {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository"  : {
+        "type": "git",
+        "url" : "git+https://Basgrani@github.com/Basgrani-Org/bas-meteor-jwplayer.git"
+    },
+    "keywords"    : [
+        "meteor",
+        "jwplayer"
+    ],
+    "author"      : "Jorge Gonzalez",
+    "license"     : "MIT",
+    "bugs"        : {
+        "url": "https://github.com/Basgrani-Org/bas-meteor-jwplayer/issues"
+    },
+    "homepage"    : "https://github.com/Basgrani-Org/bas-meteor-jwplayer#readme",
+    "dependencies": {
+        "bas-meteor-utils": "*",
+        "underscore"      : "^1.8.3"
+    }
 }
