@@ -9,7 +9,7 @@ NOTE: This version only works with JWPlayer v7
 ## Install
 
 ```
-npm install bas-meteor-jwplayer
+meteor npm install bas-meteor-jwplayer
 ```
 
 ## Setup
