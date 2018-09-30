@@ -1,6 +1,6 @@
 {
   "name": "bas-meteor-jwplayer",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Integrate a CDN hosted version of JWPlayer using your own license.",
   "main": "dist/index.js",
   "scripts": {
