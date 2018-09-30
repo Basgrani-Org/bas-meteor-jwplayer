@@ -8,11 +8,11 @@ import './lib';
 
 // Is Server
 if (Meteor.isServer) {
-    require('./server');
+  require('./server');
 }
 
 // Is Client
 if (Meteor.isClient) {
-    require('./client');
-    exports.JWPlayer = BasMTR.JWPlayer;
+  require('./client');
+  exports.JWPlayer = BasMTR.JWPlayer;
 }

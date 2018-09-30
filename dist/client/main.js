@@ -1,7 +1,7 @@
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -15,118 +15,121 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 var JWPlayer_ = function (mtr) {
+  // ------------------------------------------------------------------------
+  // Constants
+  // ------------------------------------------------------------------------
 
-    // ------------------------------------------------------------------------
-    // Constants
-    // ------------------------------------------------------------------------
+  var VERSION = BasMTR.Utils.VERSION;
 
-    var VERSION = BasMTR.Utils.VERSION;
+  // ------------------------------------------------------------------------
+  // Vars
+  // ------------------------------------------------------------------------
 
-    // ------------------------------------------------------------------------
-    // Vars
-    // ------------------------------------------------------------------------
+  var _loaded = new ReactiveVar(false);
 
-    var _loaded = new ReactiveVar(false);
+  // ------------------------------------------------------------------------
+  // Class Definition
+  // ------------------------------------------------------------------------
 
-    // ------------------------------------------------------------------------
-    // Class Definition
-    // ------------------------------------------------------------------------
+  var JWPlayer_ = function () {
+    function JWPlayer_() {
+      _classCallCheck(this, JWPlayer_);
+    }
 
-    var JWPlayer_ = function () {
-        function JWPlayer_() {
-            _classCallCheck(this, JWPlayer_);
-        }
-
-        // Getters
-        // ------------------------------------------------------------------------
-
-        _createClass(JWPlayer_, null, [{
-            key: '_checkReady',
+    _createClass(JWPlayer_, null, [{
+      key: '_checkReady',
 
 
-            // Public
-            // ------------------------------------------------------------------------
+      // Public
+      // ------------------------------------------------------------------------
 
 
-            // Static
-            // ------------------------------------------------------------------------
+      // Static
+      // ------------------------------------------------------------------------
 
 
-            // Static Private
-            // ------------------------------------------------------------------------
+      // Static Private
+      // ------------------------------------------------------------------------
 
-            value: function _checkReady() {
-                var self = this;
-                var i = 0;
-                var checkReady = mtr.setInterval(function () {
-                    if (typeof jwplayer !== 'undefined') {
-                        self.loaded = true;
-                        mtr.clearInterval(checkReady);
-                    } else {
-                        i += 100;
-                        if (i > 5000) {
-                            // stop checking if the lib isn't loaded within 5 secs
-                            mtr.clearInterval(checkReady);
-                            console.warn('Error loading JW Player from CDN');
-                        }
-                    }
-                }, 100);
+      value: function _checkReady() {
+        var self = this;
+        var i = 0;
+        var checkReady = mtr.setInterval(function () {
+          if (typeof jwplayer !== 'undefined') {
+            self.loaded = true;
+            mtr.clearInterval(checkReady);
+          } else {
+            i += 100;
+            if (i > 5000) {
+              // stop checking if the lib isn't loaded within 5 secs
+              mtr.clearInterval(checkReady);
+              console.warn('Error loading JW Player from CDN');
             }
-        }, {
-            key: 'VERSION',
-            get: function get() {
-                return VERSION;
-            }
-        }, {
-            key: 'loaded',
-            get: function get() {
-                return _loaded.get();
-            },
-            set: function set(value) {
-                return _loaded.set(value);
-            }
-        }, {
-            key: 'load',
-            get: function get() {
-                return _underscore2.default.once(function (token) {
-                    if (!token) {
-                        console.warn('Please add your token to JWPlayer.load()');
-                        return;
-                    }
-                    var script = document.createElement('script');
-                    script.type = 'text/javascript';
-                    script.src = '//content.jwplatform.com/libraries/' + token + '.js';
-                    document.head.appendChild(script);
+          }
+        }, 100);
+      }
+    }, {
+      key: 'VERSION',
 
-                    JWPlayer_._checkReady();
-                });
-            }
-        }]);
+      /* constructor() {
+       } */
 
-        return JWPlayer_;
-    }();
+      // Getters
+      // ------------------------------------------------------------------------
 
-    // ------------------------------------------------------------------------
-    // Init
-    // ------------------------------------------------------------------------
+      get: function get() {
+        return VERSION;
+      }
+    }, {
+      key: 'loaded',
+      get: function get() {
+        return _loaded.get();
+      },
+      set: function set(value) {
+        return _loaded.set(value);
+      }
+    }, {
+      key: 'load',
+      get: function get() {
+        return _underscore2.default.once(function (token) {
+          if (!token) {
+            console.warn('Please add your token to JWPlayer.load()');
+            return;
+          }
+          var script = document.createElement('script');
+          script.type = 'text/javascript';
+          script.src = '//content.jwplatform.com/libraries/' + token + '.js';
+          document.head.appendChild(script);
 
-    // Methods
-
-
-    mtr.methods({
-        //...
-    });
-
-    // ------------------------------------------------------------------------
-    // Meteor
-    // ------------------------------------------------------------------------
-
-    // Meteor startup
-    mtr.startup(function () {
-        //...
-    });
+          JWPlayer_._checkReady();
+        });
+      }
+    }]);
 
     return JWPlayer_;
+  }();
+
+  // ------------------------------------------------------------------------
+  // Init
+  // ------------------------------------------------------------------------
+
+  // Methods
+
+
+  mtr.methods({
+    // ...
+  });
+
+  // ------------------------------------------------------------------------
+  // Meteor
+  // ------------------------------------------------------------------------
+
+  // Meteor startup
+  mtr.startup(function () {
+    // ...
+  });
+
+  return JWPlayer_;
 }(Meteor);
 
 BasMTR.JWPlayer = JWPlayer_;
